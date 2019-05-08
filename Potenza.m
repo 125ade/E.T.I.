@@ -2,7 +2,7 @@
 clear all
 close all
 clc
-z0 = 75;
+zin = 75;
 lunghezza = 20;%in metri
 v0plus = 1;% fasore
 R = 0.6;
@@ -16,10 +16,10 @@ gamma = sqrt((R+1i*w*L)*(G+1i*w*C));%gamma
 alpha = real(gamma);
 beta = imag(gamma);
 %% calcoli
-P_erogata = ((abs(v0plus)^2)/(2*z0));
-P_ist_plus=((abs(v0plus)^2)/(2*z0))*exp(-2*alpha*lunghezza);
+P_erogata = ((abs(v0plus)^2)/(2*zin));
+P_ist_plus=((abs(v0plus)^2)/(2*zin))*exp(-2*alpha*lunghezza);
 
-P_minus = (((abs(v0plus)^2)*(abs(GammaL)^2))/(2*z0))*exp(2*alpha*lunghezza);% la lunghezza è la z
+P_minus = (((abs(v0plus)^2)*(abs(GammaL)^2))/(2*zin))*exp(2*alpha*lunghezza);% la lunghezza è la z
 
 P_l = P_ist_plus - P_minus;
 
